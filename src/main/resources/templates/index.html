@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<center>
+  <div style="padding:80px;">
+    <form action="/" method="post" enctype="multipart/form-data">
+      <div>
+        <label for="plain_text">Enter the text you want to decrypt or encrypt</label>
+        <input type="text" id="plain_text" name="plain_text"/>
+      </div>
+      <div>
+        <p><b>For <i>encryption</i></b></p>
+      </div>
+      <div>
+        <p>
+          <label for="numberP">Enter primary number <b>P</b></label>
+          <input type="text" id="numberP" name="numberP"></input>
+        </p>
+      </div>
+      <div>
+        <p>
+          <label for="numberQ">Enter primary number <b>Q</b></label>
+          <input type="text" id="numberQ" name="numberQ"></input>
+        </p>
+      </div>
+      <div>
+        <p><b>For <i>decryption</i></b></p>
+      </div>
+      <div>
+        <p>
+          <label for="numberN">Enter number <b>N</b></label>
+          <input type="text" id="numberN" name="numberN"></input>
+        </p>
+      </div>
+      <div>
+        <p>
+          <label for="numberE">Enter number <b>E</b></label>
+          <input type="text" id="numberE" name="numberE"></input>
+        </p>
+      </div>
+      <div>
+        <p>
+          <br>
+          <input type="checkbox" id="to_file_system" name="to_file_system">
+          <label for="to_file_system">Insert encrypted plaintext x and public key (n,e) to file system</label>
+          <br><br><br>
+          <label for="file">Select the file with cipher text:</label>
+          <br>
+          <br>
+          <input type="file" id="file" name="file"><br><br>
+        </p>
+      </div>
+      <br>
+      <div>
+        <p>
+          <button type="submit" id="execute" name="execute">Encrypt/Decrypt</button>
+        </p>
+      </div>
+      <br>
+      <div>
+        <p>
+          <span th:text="${result}"></span>
+        <p/>
+      </div>
+      <div>
+        <p>The result of GCD is:
+          <span th:text="${gcd}"></span>
+        <p/>
+      </div>
+      <div>
+        <p>Extended Euclidean algorithm:
+          <span th:text="${euc}"></span>
+        <p/>
+      </div>
+    </form>
+  </div>
+</center>
+</body>
+</html>
